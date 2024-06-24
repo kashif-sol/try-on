@@ -3,7 +3,7 @@
 client_id = "e28591114bb334e500ba54f4023e0ba5"
 name = "try-on"
 handle = "try-on-10"
-application_url = "https://tb-org-bother-dad.trycloudflare.com"
+application_url = "https://informational-grain-laser-screensavers.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://tb-org-bother-dad.trycloudflare.com/auth/callback",
-  "https://tb-org-bother-dad.trycloudflare.com/auth/shopify/callback",
-  "https://tb-org-bother-dad.trycloudflare.com/api/auth/callback"
+  "https://informational-grain-laser-screensavers.trycloudflare.com/auth/callback",
+  "https://informational-grain-laser-screensavers.trycloudflare.com/auth/shopify/callback",
+  "https://informational-grain-laser-screensavers.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

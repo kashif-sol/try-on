@@ -12,7 +12,19 @@
     "info": "shopify app info"
   },
   "dependencies": {
-    "@shopify/polaris-icons": "^9.2.0"
+    "@cloudflare/wrangler": "^1.21.0",
+    "@shopify/app": "3.58.0",
+    "@shopify/app-bridge-utils": "^3.5.1",
+    "@shopify/cli": "3.58.0",
+    "@shopify/polaris-icons": "^8.11.1",
+    "react-query": "^3.39.3"
+  },
+  "overrides": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@shopify/cli-kit": {
+      "react": "^18.3.1"
+    }
   },
   "author": "Muhammad Abrar",
   "private": true,

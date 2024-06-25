@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "2bef1ee845e3b3811371adce9bd3a7d2"
+name = "try-on"
+handle = "try-on-11"
+application_url = "https://enzyme-load-obituaries-shuttle.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "custom-development-store-1.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,write_products"
+
+[auth]
+redirect_urls = [
+  "https://enzyme-load-obituaries-shuttle.trycloudflare.com/auth/callback",
+  "https://enzyme-load-obituaries-shuttle.trycloudflare.com/auth/shopify/callback",
+  "https://enzyme-load-obituaries-shuttle.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-04"
+
+[pos]
+embedded = false

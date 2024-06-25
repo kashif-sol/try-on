@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return "Hello API";
+});
+
+
+Route::middleware('shopify.auth')->group(function () {
+    Route::controller(ProductController::class)->group(function () {
+        Route::get('get-products', 'getProducts');
+        Route::post('save-products', 'saveProducts');
+    });
+});
+
+
+Route::controller(ProductController::class)->group(function () {
+   
 });

@@ -128,6 +128,7 @@ class ProductController extends Controller
             foreach ($products as $key => $product) {
                 $productId = $product['product_id'];
                 $image = $product['image'];
+                $price = $product['price'];
                 $status = "Published";
                 $api_status = 0;
                 $product = Product::where("product_id" , $productId)->first();
@@ -137,6 +138,7 @@ class ProductController extends Controller
                 $product->product_id = $productId;
                 $product->image = $image;
                 $product->status = $status;
+                $product->price = $price;
                 $product->api_status = $api_status;
                 $product->shop_id = $shop['id'];
                 $product->save();

@@ -50,6 +50,12 @@ class ProductController extends Controller
                 id
                 title
                 status
+                priceRangeV2{
+                    minVariantPrice{
+                        amount
+                        currencyCode
+                    }
+                }
                 featuredImage{
                   url
                 }
@@ -83,6 +89,7 @@ class ProductController extends Controller
                 $productsData[] = [
                     'id' => $lastInteger ,
                     'title' => $product['node']['title'],
+                    'price' => $product['node']['priceRangeV2']['minVariantPrice']['amount'],
                     'status' => $product['node']['status'],
                     'image' => $image,
                     'views' => 10,

@@ -8,6 +8,7 @@ import {
   QueryProvider,
   PolarisProvider,
 } from "./components";
+import WrapperComponent from "./components/PageComponent/WrapperComponent";
 
 export default function App() {
   // Any .tsx or .jsx files in /pages will become a route
@@ -28,7 +29,9 @@ export default function App() {
                 },
               ]}
             />
-            <Routes pages={pages} />
+            <WrapperComponent>
+              <Routes pages={pages} />
+            </WrapperComponent>
           </QueryProvider>
         </AppBridgeProvider>
       </BrowserRouter>

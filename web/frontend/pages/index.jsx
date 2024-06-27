@@ -30,6 +30,8 @@ export default function HomePage() {
   const [pagination, setPagination] = useState({});
   const [selectedRows, setSelectedRows] = useState([]);
 
+  // console.log("selected rows", selectedRows);
+
   const fetchLinks = async (
     searchQuery = "",
     cursor = "",
@@ -114,7 +116,7 @@ export default function HomePage() {
   };
 
   return (
-    <Page>
+    <Page fullWidth>
       <Frame>
         <div style={{ margin: barActive ? "64px" : "0" }}>
           {values.barActive && (
@@ -125,6 +127,7 @@ export default function HomePage() {
               }}
               discardAction={{
                 onAction: () => {
+                  setSelectedRows([]);
                   setBarActive(false);
                   setDiscard(true);
                 },

@@ -21,6 +21,7 @@ const Home = ({ values }) => {
         updatedSelectedRows.push({
           product_id: item.id,
           image: item.image,
+          price: item.price,
         });
       }
     } else {
@@ -65,7 +66,14 @@ const Home = ({ values }) => {
         {values.products && values.products.length >= 1 ? (
           <>
             <DataTable
-              columnContentTypes={["text", "text", "text", "text", "text"]}
+              columnContentTypes={[
+                "text",
+                "text",
+                "text",
+                "text",
+                "text",
+                "text",
+              ]}
               headings={[
                 <Checkbox
                   checked={
@@ -79,6 +87,7 @@ const Home = ({ values }) => {
                       : values.products.map((row) => ({
                           product_id: row.id,
                           image: row.image,
+                          price: row.price,
                         }));
                     values.setSelectedRows(updatedSelectedRows);
                     values.setBarActive(!isAllSelected);
@@ -89,6 +98,9 @@ const Home = ({ values }) => {
                 </Text>,
                 <Text variant="headingMd" as="h6">
                   Title
+                </Text>,
+                <Text variant="headingMd" as="h6">
+                  Price
                 </Text>,
                 <Text variant="headingMd" as="h6">
                   Views
@@ -119,6 +131,7 @@ const Home = ({ values }) => {
                   />
                 </div>,
                 <Text>{item.title}</Text>,
+                <Text>{item.price}</Text>,
                 <Badge>{item.views} </Badge>,
                 <Text>
                   {item.status === "Published" ? (

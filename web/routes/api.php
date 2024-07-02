@@ -26,6 +26,11 @@ Route::middleware('shopify.auth')->group(function () {
         Route::get('get-products', 'getProducts');
         Route::post('save-products', 'saveProducts');
     });
+    
+    Route::controller(PlanController::class)->group(function () {
+        Route::get('plans', 'getPlans');
+        Route::get('subscribe_plan', 'subscribePlan');
+    });
 });
 
 
@@ -34,7 +39,3 @@ Route::controller(ProductController::class)->group(function () {
     Route::post('save-try/{id}', 'save_try');
 });
 
-Route::controller(PlanController::class)->group(function () {
-    Route::get('plans', 'getPlans');
-    Route::get('subscribe_plan', 'subscribePlan');
-});

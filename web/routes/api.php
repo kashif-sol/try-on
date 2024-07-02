@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +30,11 @@ Route::middleware('shopify.auth')->group(function () {
 
 
 Route::controller(ProductController::class)->group(function () {
-   
+    Route::get('check-product-button/{id}', 'check_product_button');
+    Route::post('save-try/{id}', 'save_try');
+});
+
+Route::controller(PlanController::class)->group(function () {
+    Route::get('plans', 'getPlans');
+    Route::get('subscribe_plan', 'subscribePlan');
 });

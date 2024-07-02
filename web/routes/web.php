@@ -41,6 +41,13 @@ Route::fallback(function (Request $request) {
             return file_get_contents(base_path('frontend/index.html'));
         }
     } else {
+
+        if (isset($request->billing) && isset($request->charge_id)) {
+            $plan_id = $request->plan_id;
+            $charge_id = $request->charge_id;
+            EnsureBilling::updatePaymentPlan($plan_id, $charge_id, $request->shop);
+        }
+        
         return redirect(Utils::getEmbeddedAppUrl($request->query("host", null)) . "/" . $request->path());
     }
 })->middleware('shopify.installed');

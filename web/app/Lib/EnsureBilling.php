@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Log;
 use Shopify\Auth\Session;
 use Shopify\Clients\Graphql;
 use Shopify\Context;
+use App\Models\Charges;
+use App\Models\Session as SessionTable;
+
 
 class EnsureBilling
 {
@@ -55,6 +58,20 @@ class EnsureBilling
         } else {
             return self::hasOneTimePayment($session, $config);
         }
+    }
+
+
+    public static function updatePaymentPlan($plan_id, $charge_id, $shop)
+    {
+        Log::info($shop);
+        $sess = SessionTable::where('shop', $shop)->first();
+        Charges::create([
+            "shop" => $shop,
+            "plan_id" => $plan_id,
+            "charge_id" => $charge_id
+        ]);
+        $sess->is_plan = true;
+        $sess->save();
     }
 
     private static function hasSubscription(Session $session, array $config): bool
@@ -108,12 +125,13 @@ class EnsureBilling
     /**
      * @return string|null
      */
-    private static function requestPayment(Session $session, array $config)
+    public static function requestPayment(Session $session, array $config)
     {
         $hostName = Context::$HOST_NAME;
         $shop = $session->getShop();
         $host = base64_encode("$shop/admin");
-        $returnUrl = "https://$hostName?shop={$shop}&host=$host";
+        $plan_id = $config["plan_id"];
+        $returnUrl = "https://$hostName?shop={$shop}&host=$host&billing=success&plan_id=" . $plan_id;
 
         if (self::isRecurring($config)) {
             $data = self::requestRecurringPayment($session, $config, $returnUrl);
@@ -147,7 +165,7 @@ class EnsureBilling
                         ],
                     ],
                     "returnUrl" => $returnUrl,
-                    "test" => !self::isProd(),
+                    "test" => true///!self::isProd(),
                 ],
             ]
         );

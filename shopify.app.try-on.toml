@@ -3,7 +3,7 @@
 client_id = "2bef1ee845e3b3811371adce9bd3a7d2"
 name = "try-on"
 handle = "try-on-11"
-application_url = "https://enzyme-load-obituaries-shuttle.trycloudflare.com"
+application_url = "https://slow-stake-perl-taiwan.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_products,write_products"
 
 [auth]
 redirect_urls = [
-  "https://enzyme-load-obituaries-shuttle.trycloudflare.com/auth/callback",
-  "https://enzyme-load-obituaries-shuttle.trycloudflare.com/auth/shopify/callback",
-  "https://enzyme-load-obituaries-shuttle.trycloudflare.com/api/auth/callback"
+  "https://slow-stake-perl-taiwan.trycloudflare.com/auth/callback",
+  "https://slow-stake-perl-taiwan.trycloudflare.com/auth/shopify/callback",
+  "https://slow-stake-perl-taiwan.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

@@ -129,6 +129,7 @@ class ProductController extends Controller
                 $productId = $product['product_id'];
                 $image = $product['image'];
                 $price = $product['price'];
+                $title = $product['title'];
                 $status = "Published";
                 $api_status = 0;
                 $product = Product::where("product_id" , $productId)->first();
@@ -139,6 +140,7 @@ class ProductController extends Controller
                 $product->image = $image;
                 $product->status = $status;
                 $product->price = $price;
+                $product->title = $title;
                 $product->api_status = $api_status;
                 $product->shop_id = $shop['id'];
                 $product->save();
@@ -154,6 +156,36 @@ class ProductController extends Controller
                 'message' => 'Please choose products'
             ];
         }
+    }
+
+    public function check_product_button($productId)
+    {
+        $product = Product::where("product_id" , $productId)->first();
+        if(empty( $product) || !isset( $product)){
+            return [
+                'status' => 'error',
+                'message' => 'Product not found!'
+            ];
+        }
+
+        return [
+            'status' => 'success',
+            'message' => 'Products found'
+        ];
+
+    }
+
+    public function save_try($productId)
+    {
+        $product = Product::where("product_id" , $productId)->first();
+        $views = $product->views;
+        $product->views = $views + 1;
+        $product->save();
+        return [
+            'status' => 'success',
+            'message' => 'Products found'
+        ];
+
     }
 
 

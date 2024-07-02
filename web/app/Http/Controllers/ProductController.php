@@ -88,8 +88,10 @@ class ProductController extends Controller
                 $lastInteger = $matches[0];
                 $product_db = Product::where("product_id" , $lastInteger)->first();
                 $product_status = "Draft";
-                if(empty( $product_db) || !isset( $product_db)){
+                $views = 0;
+                if(!empty( $product_db) && isset( $product_db)){
                     $product_status  = "Published";
+                    $views = $product_db->views;
                 }
                 $productsData[] = [
                     'id' => $lastInteger ,
@@ -97,7 +99,7 @@ class ProductController extends Controller
                     'price' => $product['node']['priceRangeV2']['minVariantPrice']['amount'],
                     'status' => $product['node']['status'],
                     'image' => $image,
-                    'views' => $product_db->views,
+                    'views' => $views,
                     'status' => $product_status
                 ];
             }

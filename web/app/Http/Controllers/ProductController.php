@@ -86,14 +86,19 @@ class ProductController extends Controller
                 }
                 preg_match('/(\d+)$/', $product['node']['id'], $matches);
                 $lastInteger = $matches[0];
+                $product_db = Product::where("product_id" , $lastInteger)->first();
+                $product_status = "Draft";
+                if(empty( $product_db) || !isset( $product_db)){
+                    $product_status  = "Published";
+                }
                 $productsData[] = [
                     'id' => $lastInteger ,
                     'title' => $product['node']['title'],
                     'price' => $product['node']['priceRangeV2']['minVariantPrice']['amount'],
                     'status' => $product['node']['status'],
                     'image' => $image,
-                    'views' => 10,
-                    'status' => "Published"
+                    'views' => $product_db->views,
+                    'status' => $product_status
                 ];
             }
 

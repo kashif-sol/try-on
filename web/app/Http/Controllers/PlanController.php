@@ -21,7 +21,7 @@ class PlanController extends Controller
     {
         $session = $request->get('shopifySession');
         $shop = Session::where('shop', $session->getShop())->first(['shop','access_token','id']);
-        return ['name' => $shop->shop,'access_token' => $shop->access_token,'id' => $shop->id];
+        return ['name' => $shop->shop,'access_token' => $shop->access_token,'id' => $shop->id , 'is_plan' => $shop->is_plan];
     }
     public function getPlans(Request $request)
     {
@@ -31,7 +31,7 @@ class PlanController extends Controller
             return [
                 'status' => 'success',
                 'plans' => $plans,
-                'is_plan' => $session->is_plan
+                'is_plan' => $session['is_plan']
             ];
         } else {
             return [

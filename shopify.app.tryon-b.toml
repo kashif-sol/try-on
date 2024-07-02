@@ -3,7 +3,7 @@
 client_id = "996db7092826f76edcd3ca70df4e2e01"
 name = "tryon-b"
 handle = "tryon-b"
-application_url = "https://terrorism-stockings-foster-microphone.trycloudflare.com"
+application_url = "https://tension-paragraphs-planning-incoming.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_products,write_products"
 
 [auth]
 redirect_urls = [
-  "https://terrorism-stockings-foster-microphone.trycloudflare.com/auth/callback",
-  "https://terrorism-stockings-foster-microphone.trycloudflare.com/auth/shopify/callback",
-  "https://terrorism-stockings-foster-microphone.trycloudflare.com/api/auth/callback"
+  "https://tension-paragraphs-planning-incoming.trycloudflare.com/auth/callback",
+  "https://tension-paragraphs-planning-incoming.trycloudflare.com/auth/shopify/callback",
+  "https://tension-paragraphs-planning-incoming.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

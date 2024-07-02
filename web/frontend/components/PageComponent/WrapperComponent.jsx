@@ -3,8 +3,8 @@ import React, { createContext, useCallback, useEffect, useState } from "react";
 export const wrapper = createContext();
 
 const WrapperComponent = ({ children }) => {
-  const navigate = useNavigate();
   const fetch = useAuthenticatedFetch();
+  const navigate = useNavigate();
   const [loadingActive, setLoadingActive] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [toastContent, setToastContent] = useState("");

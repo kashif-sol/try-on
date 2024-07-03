@@ -56,15 +56,13 @@ const PlansComponent = ({ values }) => {
                         values.handlePlan(item.id);
                         size = "slim";
                       }}
-                      //   disabled={values.isPlan == item.plan_id}
+                      disabled={values.isPlan == item.id}
                     >
-                      {values.isPlan == item.plan_id ? (
-                        <>Subscribed</>
+                      {values.isPlan == item.id ? (
+                        <>Current plan</>
                       ) : (
                         <>
-                          <Text variant="heading2xl" as="h6">
-                            {"$" + item.price} /Month
-                          </Text>
+                          <Text>{"$" + item.price} /Month</Text>
                         </>
                       )}
 

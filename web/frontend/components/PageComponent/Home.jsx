@@ -22,7 +22,7 @@ const Home = ({ values }) => {
           product_id: item.id,
           image: item.image,
           price: item.price,
-          product_title: item.title,
+          title: item.title,
         });
       }
     } else {
@@ -89,7 +89,7 @@ const Home = ({ values }) => {
                           product_id: row.id,
                           image: row.image,
                           price: row.price,
-                          product_title: row.title,
+                          title: row.title,
                         }));
                     values.setSelectedRows(updatedSelectedRows);
                     values.setBarActive(!isAllSelected);

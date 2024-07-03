@@ -20,7 +20,7 @@ class PlanController extends Controller
     public function getShopData($request)
     {
         $session = $request->get('shopifySession');
-        $shop = Session::where('shop', $session->getShop())->first(['shop','access_token','id']);
+        $shop = Session::where('shop', $session->getShop())->first(['shop','access_token','id' , 'is_plan']);
         return ['name' => $shop->shop,'access_token' => $shop->access_token,'id' => $shop->id , 'is_plan' => $shop->is_plan];
     }
     public function getPlans(Request $request)

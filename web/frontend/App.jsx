@@ -24,7 +24,7 @@ export default function App() {
             <NavigationMenu
               navigationLinks={[
                 {
-                  label: "Plans Page",
+                  label: "Plan",
                   destination: "/PlansPage",
                 },
               ]}

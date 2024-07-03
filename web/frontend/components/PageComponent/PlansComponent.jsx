@@ -29,10 +29,12 @@ const PlansComponent = ({ values }) => {
                     <br />
                     <Divider borderColor="border-inverse" />
                     <br />
-                    <Text variant="headingSm" as="h6">
-                      {/* {item.views} */}
-                      Plan Information
-                    </Text>
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                      <Text variant="headingSm" as="h6">
+                        {/* {item.views} */}
+                        Plan Information
+                      </Text>
+                    </div>
 
                     <br />
                     <List type="bullet">
@@ -52,6 +54,7 @@ const PlansComponent = ({ values }) => {
                       fullWidth
                       onClick={() => {
                         values.handlePlan(item.id);
+                        size = "slim";
                       }}
                       //   disabled={values.isPlan == item.plan_id}
                     >

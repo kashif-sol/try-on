@@ -84,13 +84,15 @@ export default function HomePage() {
       });
       const result = await response.json();
       if (result.status == "success") {
+        fetchLinks(searchQuery, "");
         setToastContent(result.message);
         setShowToast(true);
       }
     } catch (error) {
+      setLoadingActive(false);
       console.error("Error:", error);
     } finally {
-      setLoadingActive(false);
+      // setLoadingActive(false);
     }
   };
 

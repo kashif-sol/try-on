@@ -3,7 +3,7 @@
 client_id = "996db7092826f76edcd3ca70df4e2e01"
 name = "tryon-b"
 handle = "tryon-b"
-application_url = "https://henderson-updating-scanned-generators.trycloudflare.com"
+application_url = "https://palestine-accident-cape-alumni.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_products,write_products"
 
 [auth]
 redirect_urls = [
-  "https://henderson-updating-scanned-generators.trycloudflare.com/auth/callback",
-  "https://henderson-updating-scanned-generators.trycloudflare.com/auth/shopify/callback",
-  "https://henderson-updating-scanned-generators.trycloudflare.com/api/auth/callback"
+  "https://palestine-accident-cape-alumni.trycloudflare.com/auth/callback",
+  "https://palestine-accident-cape-alumni.trycloudflare.com/auth/shopify/callback",
+  "https://palestine-accident-cape-alumni.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

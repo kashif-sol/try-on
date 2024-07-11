@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "32c61efceaaac708fc5dc26f22ecca69"
+name = "tryOn-a"
+handle = "tryon-a"
+application_url = "https://n-reel-lung-salary.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "fuzz-app-t2.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,write_products"
+
+[auth]
+redirect_urls = [
+  "https://n-reel-lung-salary.trycloudflare.com/auth/callback",
+  "https://n-reel-lung-salary.trycloudflare.com/auth/shopify/callback",
+  "https://n-reel-lung-salary.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+[pos]
+embedded = false

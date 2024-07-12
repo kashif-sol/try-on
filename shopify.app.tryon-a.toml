@@ -3,7 +3,7 @@
 client_id = "32c61efceaaac708fc5dc26f22ecca69"
 name = "tryOn-a"
 handle = "tryon-a"
-application_url = "https://software-six-individual-clinical.trycloudflare.com"
+application_url = "https://craig-lightning-accordance-era.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_products,write_products"
 
 [auth]
 redirect_urls = [
-  "https://software-six-individual-clinical.trycloudflare.com/auth/callback",
-  "https://software-six-individual-clinical.trycloudflare.com/auth/shopify/callback",
-  "https://software-six-individual-clinical.trycloudflare.com/api/auth/callback"
+  "https://craig-lightning-accordance-era.trycloudflare.com/auth/callback",
+  "https://craig-lightning-accordance-era.trycloudflare.com/auth/shopify/callback",
+  "https://craig-lightning-accordance-era.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

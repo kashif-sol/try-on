@@ -1,5 +1,5 @@
 <script>
-      fetch('/api/check-product-button/{{ product.id }}')
+      fetch('http://127.0.0.1:9697/api/check-product-button/{{ product.id }}')
         .then(response => response.json())
         .then(data => {
             if (data.status=="success") {
@@ -9,7 +9,7 @@
         });
     </script>
 
-{% comment %} <div>
+ {% comment %} <div>
     <p>Product Name: {{ product.title | handle }}</p>
     <p>Product ID: {{ product.id }}</p>
     <p>Product URL: {{ product.url }}</p>
@@ -46,7 +46,7 @@
         const shopName = '{{ shop.domain }}';
         const productName = '{{ product.title | replace: ' ',''}}';
         const productUrl = '{{ product.url | replace: 'https://www.', '' }}';
-        const customUrl = mirrarme://mirrarme.com/ph/${shopName}/${productName}/${shopName+productUrl};
+        const customUrl = `mirrarme://mirrarme.com/ph/${shopName}/${productName}/${shopName+productUrl}`;
         console.log("url.......",customUrl)
         // console.warn("Product Information:", {{ product | json }});
         // window.location.href = customUrl;

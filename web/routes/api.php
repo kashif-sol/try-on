@@ -25,6 +25,8 @@ Route::middleware('shopify.auth')->group(function () {
     Route::controller(ProductController::class)->group(function () {
         Route::get('get-products', 'getProducts');
         Route::post('save-products', 'saveProducts');
+        Route::post('remove-product/{id}', 'remove_product');
+        Route::get('top-products', 'top_analytics');
     });
     
     Route::controller(PlanController::class)->group(function () {

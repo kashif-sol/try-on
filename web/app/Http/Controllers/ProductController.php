@@ -164,6 +164,32 @@ class ProductController extends Controller
             ];
         }
     }
+ 
+    public function remove_product($productId){
+
+        $product = Product::where("product_id" , $productId)->first();
+        if(empty( $product) || !isset( $product)){
+            $product->status = "Draft";
+            $product->save();
+        }
+
+        return [
+            'status' => 'success',
+            'message' => 'Products found'
+        ];
+    }
+
+    public function top_analytics(Request $request)
+    {
+        $shop = $this->getShopData($request);
+        $topProducts = Product::where("shop_id" , $shop['id'])->orderBy('views', 'desc')->take(10)->get();
+        return [
+            'status' => 'success',
+            'message' => '',
+            'top_products' => $topProducts,
+        ];
+        
+    }
 
     public function check_product_button($productId)
     {

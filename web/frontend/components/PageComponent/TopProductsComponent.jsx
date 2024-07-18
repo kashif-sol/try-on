@@ -77,10 +77,10 @@ const TopProductsComponent = ({ products }) => {
         display: true,
         position: "top",
       },
-      title: {
-        display: true,
-        text: "Top products by tries",
-      },
+      //   title: {
+      //     display: true,
+      //     text: "Top products by tries",
+      //   },
     },
     barThickness: 40, // Decrease the width of the bars
   };

@@ -24,7 +24,7 @@ ChartJS.register(
 const TopProductsComponent = ({ products }) => {
   const productTitles = products.map((product) => {
     const title = product.title || `Product ${product.id}`;
-    return title.length > 25 ? `${title.slice(0, 25)}...` : title;
+    return title.length > 40 ? `${title.slice(0, 40)}...` : title;
   });
   const productViews = products.map((product) => product.views);
 
@@ -68,7 +68,7 @@ const TopProductsComponent = ({ products }) => {
           },
           autoSkip: false,
           maxRotation: 45,
-          minRotation: -45,
+          //   minRotation: 45,
         },
       },
     },

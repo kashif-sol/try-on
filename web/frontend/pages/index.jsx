@@ -6,7 +6,7 @@ import {
   Toast,
 } from "@shopify/polaris";
 import Home from "../components/PageComponent/Home";
-import { useCallback, useContext, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { wrapper } from "../components/PageComponent/WrapperComponent";
 import { useAuthenticatedFetch } from "../hooks";
 import debounce from "debounce";
@@ -96,6 +96,36 @@ export default function HomePage() {
     }
   };
 
+  //  remove produce
+  const handleRemoveProduct = async (id) => {
+    setLoadingActive(true);
+    const apiUrl = `/api/remove-product/${id}`;
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // body: JSON.stringify({ id: id }),
+      });
+      const result = await response.json();
+      if (result.status == "success") {
+        fetchLinks(searchQuery, "");
+        setToastContent(result.message);
+        setShowToast(true);
+      }
+    } catch (error) {
+      setLoadingActive(false);
+      console.error("Error:", error);
+    } finally {
+      // setLoadingActive(false);
+    }
+  };
+
+  // useEffect(() => {
+  //   handleRemoveProduct();
+  // });
+
   const handleSaveButtonClick = () => {
     handlePostData(selectedRows);
     setBarActive(false);
@@ -115,6 +145,7 @@ export default function HomePage() {
     fetchLinks,
     selectedRows,
     setSelectedRows,
+    handleRemoveProduct,
   };
 
   return (

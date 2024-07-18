@@ -74,6 +74,7 @@ const Home = ({ values }) => {
                 "text",
                 "text",
                 "text",
+                "text",
               ]}
               headings={[
                 <Checkbox
@@ -110,6 +111,9 @@ const Home = ({ values }) => {
                 <Text variant="headingMd" as="h6">
                   Status
                 </Text>,
+                <Text variant="headingMd" as="h6">
+                  Action
+                </Text>,
               ]}
               rows={values.products.map((item, index) => [
                 <Checkbox
@@ -142,6 +146,20 @@ const Home = ({ values }) => {
                     <Badge tone="warning">{item.status}</Badge>
                   )}
                 </Text>,
+                <div>
+                  {item.status === "Published" && (
+                    <>
+                      <Button
+                        variant="primary"
+                        onClick={() => {
+                          values.handleRemoveProduct(item.id);
+                        }}
+                      >
+                        Remove
+                      </Button>
+                    </>
+                  )}
+                </div>,
               ])}
             />
             <div

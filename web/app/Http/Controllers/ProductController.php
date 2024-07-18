@@ -90,7 +90,7 @@ class ProductController extends Controller
                 $product_status = "Draft";
                 $views = 0;
                 if(!empty( $product_db) && isset( $product_db)){
-                    $product_status  = "Published";
+                    $product_status  = $product_db->status;
                     $views = $product_db->views;
                 }
                 $productsData[] = [
@@ -168,14 +168,16 @@ class ProductController extends Controller
     public function remove_product($productId){
 
         $product = Product::where("product_id" , $productId)->first();
-        if(empty( $product) || !isset( $product)){
+
+        if(!empty( $product) || isset( $product)){
             $product->status = "Draft";
             $product->save();
         }
 
         return [
             'status' => 'success',
-            'message' => 'Products found'
+            'message' => 'Products found',
+            'd' => $product
         ];
     }
 

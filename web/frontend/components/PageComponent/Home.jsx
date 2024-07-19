@@ -1,10 +1,13 @@
 import {
   Badge,
   Button,
+  ButtonGroup,
   Card,
   Checkbox,
   DataTable,
+  FormLayout,
   Icon,
+  List,
   Text,
   TextField,
 } from "@shopify/polaris";
@@ -52,6 +55,47 @@ const Home = ({ values }) => {
 
   return (
     <>
+      <Card>
+        <FormLayout>
+          <Text variant="headingMd" as="h6">
+            Welcome to MIRRARME - Your Virtual Try-On Solution!
+          </Text>
+          <Text>
+            MIRRARME’s cutting-edge virtual try-on technology allows your
+            customers to see how clothes will look on them before making a
+            purchase. By simply uploading a photo, our AI seamlessly integrates
+            the selected clothing onto their image, providing a realistic and
+            personalized shopping experience.
+          </Text>
+          <Text variant="headingMd" as="h6">
+            Getting Started:
+          </Text>
+          <div style={{ marginLeft: "1rem" }}>
+            <Text variant="headingSm" as="h6">
+              Add New Clothing for Try-On:
+            </Text>
+            <List type="bullet">
+              <List.Item>
+                Simply select the tick box next to the product you want to
+                enable for virtual try-on. Click “Save” to update your store.
+              </List.Item>
+            </List>
+          </div>
+          <div style={{ marginLeft: "1rem" }}>
+            <Text variant="headingSm" as="h6">
+              Remove Clothing from Try-On:
+            </Text>
+            <List type="bullet">
+              <List.Item>
+                Select the tick box next to the product you want to remove from
+                the virtual try-on feature. Click “Remove” to update your store.
+              </List.Item>
+            </List>
+          </div>
+        </FormLayout>
+      </Card>
+      <br />
+
       <Card sectioned>
         <div style={{ width: "60%", marginLeft: "20%" }}>
           <TextField
@@ -197,6 +241,29 @@ const Home = ({ values }) => {
                 Next
               </Button>
             </div>
+            {values.barActive && (
+              <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                <ButtonGroup>
+                  <Button
+                    variant="primary"
+                    onClick={() => {
+                      values.setSelectedRows([]);
+                      values.setBarActive(false);
+                      values.setDiscard(true);
+                    }}
+                  >
+                    Discard
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      values.handleSaveButtonClick();
+                    }}
+                  >
+                    Save
+                  </Button>
+                </ButtonGroup>
+              </div>
+            )}
           </>
         ) : (
           <div>Products will be visible here</div>

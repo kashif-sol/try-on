@@ -24,7 +24,7 @@ ChartJS.register(
 const TopProductsComponent = ({ products }) => {
   const productTitles = products.map((product) => {
     const title = product.title || `Product ${product.id}`;
-    return title.length > 25 ? `${title.slice(0, 25)}...` : title;
+    return title.length > 40 ? `${title.slice(0, 40)}...` : title;
   });
   const productViews = products.map((product) => product.views);
 
@@ -34,7 +34,7 @@ const TopProductsComponent = ({ products }) => {
       {
         label: "Number of tries",
         data: productViews,
-        backgroundColor: "#12436d",
+        backgroundColor: "#E95C87",
         borderWidth: 0,
       },
     ],
@@ -43,8 +43,9 @@ const TopProductsComponent = ({ products }) => {
   const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
+    indexAxis: "y", // Set this to 'y' to make the bars horizontal
     scales: {
-      y: {
+      x: {
         beginAtZero: true,
         ticks: {
           stepSize: 1,
@@ -54,21 +55,21 @@ const TopProductsComponent = ({ products }) => {
           text: "Number of tries",
         },
         grid: {
-          display: false, // Remove horizontal grid lines
+          display: false, // Remove vertical grid lines
         },
       },
-      x: {
+      y: {
         title: {
           display: true,
-          //   text: "Number of Views",
+          // text: "Products",
         },
         ticks: {
           callback: function (value) {
             return this.getLabelForValue(value);
           },
           autoSkip: false,
-          maxRotation: 45,
-          minRotation: -45,
+          maxRotation: 0,
+          minRotation: 0,
         },
       },
     },
@@ -77,12 +78,8 @@ const TopProductsComponent = ({ products }) => {
         display: true,
         position: "top",
       },
-      //   title: {
-      //     display: true,
-      //     text: "Top products by tries",
-      //   },
     },
-    barThickness: 40, // Decrease the width of the bars
+    barThickness: 40, // Adjust the width of the bars
   };
 
   return (

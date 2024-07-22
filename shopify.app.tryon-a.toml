@@ -3,7 +3,7 @@
 client_id = "32c61efceaaac708fc5dc26f22ecca69"
 name = "tryOn-a"
 handle = "tryon-a"
-application_url = "https://astronomy-sight-trees-lisa.trycloudflare.com"
+application_url = "https://patrol-greg-indeed-household.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_products,write_products"
 
 [auth]
 redirect_urls = [
-  "https://astronomy-sight-trees-lisa.trycloudflare.com/auth/callback",
-  "https://astronomy-sight-trees-lisa.trycloudflare.com/auth/shopify/callback",
-  "https://astronomy-sight-trees-lisa.trycloudflare.com/api/auth/callback"
+  "https://patrol-greg-indeed-household.trycloudflare.com/auth/callback",
+  "https://patrol-greg-indeed-household.trycloudflare.com/auth/shopify/callback",
+  "https://patrol-greg-indeed-household.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

@@ -87,6 +87,7 @@ export default function HomePage() {
         fetchLinks(searchQuery, "");
         setToastContent(result.message);
         setShowToast(true);
+        setSelectedRows([]);
       }
     } catch (error) {
       setLoadingActive(false);
@@ -146,12 +147,13 @@ export default function HomePage() {
     selectedRows,
     setSelectedRows,
     handleRemoveProduct,
+    handleSaveButtonClick,
   };
 
   return (
     <Page fullWidth>
       <Frame>
-        <div style={{ margin: barActive ? "64px" : "0" }}>
+        {/* <div style={{ margin: barActive ? "64px" : "0" }}>
           {values.barActive && (
             <ContextualSaveBar
               message="Unsaved changes"
@@ -167,7 +169,7 @@ export default function HomePage() {
               }}
             />
           )}
-        </div>
+        </div> */}
         <Home values={values} />
         <div>
           {showToast && (

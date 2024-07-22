@@ -195,7 +195,7 @@ class ProductController extends Controller
 
     public function check_product_button($productId)
     {
-        $product = Product::where("product_id" , $productId)->first();
+        $product = Product::where("product_id" , $productId)->where("status" , "Published")->first();
         if(empty( $product) || !isset( $product)){
             return [
                 'status' => 'error',

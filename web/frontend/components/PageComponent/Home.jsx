@@ -56,43 +56,54 @@ const Home = ({ values }) => {
   return (
     <>
       <Card>
-        <FormLayout>
-          <Text variant="headingMd" as="h6">
-            Welcome to MIRRARME - Your Virtual Try-On Solution!
-          </Text>
-          <Text>
-            MIRRARME’s cutting-edge virtual try-on technology allows your
-            customers to see how clothes will look on them before making a
-            purchase. By simply uploading a photo, our AI seamlessly integrates
-            the selected clothing onto their image, providing a realistic and
-            personalized shopping experience.
-          </Text>
-          <Text variant="headingMd" as="h6">
-            Getting Started:
-          </Text>
-          <div style={{ marginLeft: "1rem" }}>
-            <Text variant="headingSm" as="h6">
-              Add New Clothing for Try-On:
+        <div style={{ display: "flex", gap: "30px" }}>
+          <div>
+            <Text variant="headingMd" as="h6">
+              Welcome to MIRRARME - Your Virtual Try-On Solution!
             </Text>
-            <List type="bullet">
-              <List.Item>
-                Simply select the tick box next to the product you want to
-                enable for virtual try-on. Click “Save” to update your store.
-              </List.Item>
-            </List>
-          </div>
-          <div style={{ marginLeft: "1rem" }}>
-            <Text variant="headingSm" as="h6">
-              Remove Clothing from Try-On:
+            <Text>
+              MIRRARME’s cutting-edge virtual try-on technology allows your
+              customers to see how clothes will look on them before making a
+              purchase. By simply uploading a photo, our AI seamlessly
+              integrates the selected clothing onto their image, providing a
+              realistic and personalized shopping experience.
             </Text>
-            <List type="bullet">
-              <List.Item>
-                Select the tick box next to the product you want to remove from
-                the virtual try-on feature. Click “Remove” to update your store.
-              </List.Item>
-            </List>
+            <br />
+            <Text variant="headingMd" as="h6">
+              Getting Started:
+            </Text>
+            <div style={{ marginLeft: "1rem" }}>
+              <Text variant="headingSm" as="h6">
+                Add New Clothing for Try-On:
+              </Text>
+              <List type="bullet">
+                <List.Item>
+                  Simply select the tick box next to the product you want to
+                  enable for virtual try-on. Click “Save” to update your store.
+                </List.Item>
+              </List>
+            </div>
+            <div style={{ marginLeft: "1rem" }}>
+              <Text variant="headingSm" as="h6">
+                Remove Clothing from Try-On:
+              </Text>
+              <List type="bullet">
+                <List.Item>
+                  Select the tick box next to the product you want to remove
+                  from the virtual try-on feature. Click “Remove” to update your
+                  store.
+                </List.Item>
+              </List>
+            </div>
           </div>
-        </FormLayout>
+          {/* video */}
+          <div style={{ width: "1050px" }}>
+            <video width="100%" controls loop>
+              <source src="/loom-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
       </Card>
       <br />
 

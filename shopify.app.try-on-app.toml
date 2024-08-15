@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "7ca9b2a559b1f26689aa7e3c83e0d57c"
+name = "try-on-app"
+handle = "try-on-app-3"
+application_url = "https://candy-plaza-dg-cabinet.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "zoompackback.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,write_products"
+
+[auth]
+redirect_urls = [
+  "https://candy-plaza-dg-cabinet.trycloudflare.com/auth/callback",
+  "https://candy-plaza-dg-cabinet.trycloudflare.com/auth/shopify/callback",
+  "https://candy-plaza-dg-cabinet.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+[pos]
+embedded = false

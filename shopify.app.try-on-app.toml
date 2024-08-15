@@ -3,7 +3,7 @@
 client_id = "7ca9b2a559b1f26689aa7e3c83e0d57c"
 name = "try-on-app"
 handle = "try-on-app-3"
-application_url = "https://candy-plaza-dg-cabinet.trycloudflare.com"
+application_url = "https://matched-buyer-serial-harassment.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_products,write_products"
 
 [auth]
 redirect_urls = [
-  "https://candy-plaza-dg-cabinet.trycloudflare.com/auth/callback",
-  "https://candy-plaza-dg-cabinet.trycloudflare.com/auth/shopify/callback",
-  "https://candy-plaza-dg-cabinet.trycloudflare.com/api/auth/callback"
+  "https://matched-buyer-serial-harassment.trycloudflare.com/auth/callback",
+  "https://matched-buyer-serial-harassment.trycloudflare.com/auth/shopify/callback",
+  "https://matched-buyer-serial-harassment.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

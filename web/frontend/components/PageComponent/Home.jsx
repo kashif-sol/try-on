@@ -56,7 +56,7 @@ const Home = ({ values }) => {
   return (
     <>
       <Card>
-        <div style={{ display: "flex", gap: "30px" }}>
+        <div style={{ display: "flex", gap: "30px",alignItems:"center"}}>
           <div>
             <Text variant="headingMd" as="h6">
               Welcome to MIRRARME - Your Virtual Try-On Solution!
@@ -72,6 +72,16 @@ const Home = ({ values }) => {
             <Text variant="headingMd" as="h6">
               Getting Started:
             </Text>
+            <div style={{ marginLeft: "1rem" }}>
+              <Text variant="headingSm" as="h6">
+              How to add Try On Button?
+              </Text>
+              <List type="bullet">
+                <List.Item>
+                Please review video for instructions on how to add the Try On with AI button/block to your product page. Once added, this will apply to all product pages that use Try On with AI.
+                </List.Item>
+              </List>
+            </div>
             <div style={{ marginLeft: "1rem" }}>
               <Text variant="headingSm" as="h6">
                 Add New Clothing for Try-On:
@@ -99,7 +109,7 @@ const Home = ({ values }) => {
           {/* video */}
           <div style={{ width: "1050px" }}>
             <video width="100%" controls loop>
-              <source src="/loom-video.mp4" type="video/mp4" />
+              <source src=" /loom-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
